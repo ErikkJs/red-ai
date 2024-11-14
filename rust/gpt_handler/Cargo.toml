@@ -1,0 +1,18 @@
+[package]
+name = "gpt_handler"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+aws-config = "1.5.9" 
+aws-sdk-dynamodb = "1.52.0"     
+lambda_runtime = "0.13"                 # Latest AWS Lambda runtime for Rust
+serde = { version = "1.0", features = ["derive"] }    # Serialization and deserialization
+serde_json = "1.0"                      # JSON handling
+reqwest = { version = "0.12.9", features = ["json","native-tls-vendored"] }
+tokio = { version = "1", features = ["full"] }        # Async runtime
+chrono = "0.4"                          # For timestamp handling
+
+[[bin]]
+name = "bootstrap"
+path = "src/main.rs"
